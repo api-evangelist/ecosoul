@@ -1,7 +1,17 @@
 aid: ecosoul
-name: Ecosoul
-description: 'Ecosoul is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.'
+name: EcoSoul Home
+description: >-
+  EcoSoul Home is a direct-to-consumer sustainable home-essentials brand selling
+  compostable and eco-friendly tableware — plates, bowls, hot cups, cutlery, napkins,
+  bagasse and areca-leaf products — plus everyday household goods made from renewable
+  materials. The brand sells online through its Shopify storefront (and via major
+  retail marketplaces) with the mission of replacing single-use plastic in the home.
+  Backed by Accel, EcoSoul was added to the API Evangelist network as a portfolio
+  lead and enriched from its public agent-native commerce surface: a published
+  /llms.txt (agents.md) instruction file, Shopify Customer Accounts OpenID Connect
+  for authentication, and a Universal Commerce Protocol (UCP) MCP endpoint that lets
+  buyer-approved AI shopping agents search the catalog, build carts, and complete
+  checkout via Shop Pay, Google Pay, or card.
 url: https://raw.githubusercontent.com/api-evangelist/ecosoul/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +19,33 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://www.ecosoulhome.com/cdn/shop/files/B1.webp?v=1755690792
 tags:
 - Company
 - Consumer
+- Sustainability
+- Home Goods
+- Compostable
+- Tableware
+- Retail
+- E-Commerce
+- Shopify
+- Agentic Commerce
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,3 +55,32 @@ maintainers:
 common:
 - type: Website
   url: https://www.ecosoulhome.com/
+- type: MCPServer
+  url: mcp/ecosoul-mcp.yml
+- type: LLMsTxt
+  url: llms/ecosoul-llms.txt
+- type: WellKnown
+  url: well-known/ecosoul-well-known.yml
+- type: Authentication
+  url: authentication/ecosoul-authentication.yml
+- type: OAuthScopes
+  url: scopes/ecosoul-scopes.yml
+- type: DomainSecurity
+  url: security/ecosoul-domain-security.yml
+- type: Blog
+  url: https://www.ecosoulhome.com/blogs/sustainable-living
+- type: Support
+  url: https://www.ecosoulhome.com/pages/contact
+- type: SignUp
+  url: https://www.ecosoulhome.com/account/register
+- type: Login
+  url: https://www.ecosoulhome.com/account/login
+- type: PrivacyPolicy
+  url: https://www.ecosoulhome.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://www.ecosoulhome.com/policies/terms-of-service
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
