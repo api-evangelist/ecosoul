@@ -2,13 +2,11 @@ generated: '2026-07-19'
 method: searched
 status: published
 source: https://www.ecosoulhome.com/.well-known/ucp
-notes: >-
-  EcoSoul Home is a Shopify store that exposes an agent-commerce MCP endpoint via the
-  Universal Commerce Protocol (UCP). The MCP endpoint enforces agent authentication —
-  a UCP agent profile URI must be presented, so an unauthenticated tools/list returns
-  error -32001 (invalid_profile_url). The capability/tool surface below is transcribed
-  verbatim from the store's published UCP merchant profile (/.well-known/ucp) and the
-  agent flow documented in /llms.txt; it is not an unauthenticated live tools/list dump.
+notes: EcoSoul Home is a Shopify store that exposes an agent-commerce MCP endpoint via the Universal Commerce
+  Protocol (UCP). The MCP endpoint enforces agent authentication — a UCP agent profile URI must be presented,
+  so an unauthenticated tools/list returns error -32001 (invalid_profile_url). The capability/tool surface
+  below is transcribed verbatim from the store's published UCP merchant profile (/.well-known/ucp) and
+  the agent flow documented in /llms.txt; it is not an unauthenticated live tools/list dump.
 server:
   name: ecosoul-home
   transport: http
@@ -22,7 +20,7 @@ server:
   auth:
     required: true
     scheme: UCP agent profile URI (context.profile) + buyer approval for checkout
-    error_without_profile: '-32001 invalid_profile_url'
+    error_without_profile: -32001 invalid_profile_url
 capabilities:
 - id: dev.ucp.shopping.catalog.search
   spec: https://ucp.dev/2026-04-08/specification/catalog
@@ -55,3 +53,11 @@ payment_handlers:
 - com.google.pay
 - dev.shopify.card
 - dev.shopify.shop_pay
+deployment:
+  mode: remote
+  endpoint: https://www.ecosoulhome.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
