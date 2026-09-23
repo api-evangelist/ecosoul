@@ -2,25 +2,33 @@ generated: '2026-07-19'
 method: searched
 source: live probes of https://www.ecosoulhome.com/.well-known/*
 host: https://www.ecosoulhome.com
-documents:
-- path: /.well-known/openid-configuration
-  status: 200
-  type: application/json
-  file: ecosoul-openid-configuration.json
-  note: Shopify Customer Accounts OIDC discovery (issuer https://shopify.com/authentication/49573396633)
-- path: /.well-known/oauth-authorization-server
-  status: 200
-  type: application/json
-  file: ecosoul-oauth-authorization-server.json
-  note: RFC 8414 authorization-server metadata, mirrors the Shopify Customer Accounts OIDC document
-- path: /.well-known/ucp
-  status: 200
-  type: application/json
-  file: ecosoul-ucp.json
-  note: Universal Commerce Protocol (UCP) merchant profile — agent-driven commerce capabilities, UCP MCP endpoint, and payment handlers (Google Pay, Shopify card, Shop Pay)
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+hosts:
+- host: https://www.ecosoulhome.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: ecosoul-openid-configuration.json
+    type: application/json
+    note: Shopify Customer Accounts OIDC discovery (issuer https://shopify.com/authentication/49573396633)
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: ecosoul-oauth-authorization-server.json
+    type: application/json
+    note: RFC 8414 authorization-server metadata, mirrors the Shopify Customer Accounts OIDC document
+  - path: /.well-known/ucp
+    status: 200
+    file: ecosoul-ucp.json
+    type: application/json
+    note: Universal Commerce Protocol (UCP) merchant profile — agent-driven commerce capabilities, UCP
+      MCP endpoint, and payment handlers (Google Pay, Shopify card, Shop Pay)
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
