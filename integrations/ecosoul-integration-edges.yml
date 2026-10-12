@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/ecosoul/integrations
+- https://zapier.com/apps/ecosoul-home/integrations
+- https://n8n.io/integrations/ecosoul/
+- https://composio.dev/toolkits/ecosoul
+- https://monid.ai/tools/ecosoul
+checked:
+- https://composio.dev/toolkits/ecosoul
+- https://monid.ai/tools/ecosoul
+- https://n8n.io/integrations/ecosoul/
+- https://zapier.com/apps/ecosoul-home/integrations
+- https://zapier.com/apps/ecosoul/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
